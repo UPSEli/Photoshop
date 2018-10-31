@@ -1,0 +1,34 @@
+import java.awt.image.BufferedImage;
+
+/**
+ * A generic Main Class that takes a photo as an input to allow us to start
+ * implementing various methods to test and work on for outputting a changed
+ * photo
+ *
+ * @version 10.22.18
+ * @author Eli, Semaj, Rei
+ */
+
+public class Main {
+
+    /**
+     * Allows for an hard coding of a possible picture we want to manipulate to test functions. Just need
+     * to put a .png file in the folder of the project and name it pic.png for it to be accessible by the
+     * main method.
+     */
+    private String IMAGE_FILENAME = "pic.png";
+
+    /**
+     * Empty constructor, currently has no inputs because we are not sure yet what it will need as inputs.
+     */
+    public Main() {
+    }
+
+    /**
+     *
+     * @param args
+     */
+    public static void main(String args){
+
+    }
+}
