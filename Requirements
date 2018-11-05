@@ -1,5 +1,5 @@
 Initial Requirements
-Requirements for getting the Photoshop program to be able to recognize and remove objects from photographs:
+Requirements for creating a Photoshop program able to manipulate photographs:
 
 User Requirements:
   Non-Functional Requirements:
@@ -10,16 +10,16 @@ The program should be reliable and only remove the specified objects
 The program should not be very large
 
   Functional Requirements:.
-The program will take a photo as an input, allow the user to mark objects they want removed from the photo, and then the program will remove them.
+The program will take a photo as an input and allow the user to manipulate it
 The program should be small and able to process the changes quickly
 Functions should have an obvious UI counterpart so the client can easily tell what it does
-Each stage of the program, inputting the photograph, marking it, and changing it should be obvious about what stage it is on, and what is needed to be done to move forward
+Each stage of the program, from selecting the photo to editing it should have a clear ui counterpart, and should be obvious what needs to be inputted
 
 System Requirements:  
   Non-Functional Requirements:
 It should be assumed that the program is being run on a low-budget computer
 The removal of an object from the photo shouldn’t take longer than a few seconds
-The program should make it clear what objects are being highlighted
+The program should make it clear what changes are going to be made
 The program will be consistent with what it removes from the photo. The program should never remove an object that is not designated to be removed
 In order to be run on as many computers as possible, the program should be as small as possible without sacrificing speed
 
