@@ -25,6 +25,45 @@ public class Main {
     }
 
     /**
+     * A basic method that adjusts the brightness and the contrast of an image.
+     * @param filename The filename of the image to be adjested.
+     * @param alpha enter a value between 1 and 3. alpha adjusts contrast.
+     * @param beta enter a value between 0-100. beta adjusts brightness.
+     * @param newfile the location of the new file for the changed photo.
+     */
+    public void Contrast(String filename, double alpha, int beta, String newfile) {
+        Mat img = imread(filename);
+        Mat newimg = Mat.zeros(img.size(), img.type());
+
+        byte[] imageData = new byte[(int) (img.total() * img.channels())];
+        img.get(0, 0, imageData);
+        byte[] newImageData = new byte[(int) (newimg.total() * newimg.channels())];
+        for (int y = 0; y < img.rows(); y++) {
+            for (int x = 0; x < img.cols(); x++) {
+                for (int c = 0; c < img.channels(); c++) {
+                    double pixelValue = imageData[(y * img.cols() + x) * img.channels() + c];
+                    pixelValue = pixelValue < 0 ? pixelValue + 256 : pixelValue;
+                    newImageData[(y * img.cols() + x) * img.channels() + c]
+                            = Saturate(alpha * pixelValue + beta);
+                }
+            }
+        }
+
+        imwrite(newfile, newimg);
+    }
+
+    /**
+     * A helper method for the Contrast method that handles the saturation values.
+     * @param val The value being saturated
+     * @return returns the new value
+     */
+    private byte Saturate(double val){
+        int iVal = (int) Math.round(val);
+        iVal = iVal > 255 ? 255 : (iVal < 0 ? 0 : iVal);
+        return (byte) iVal;
+    }
+
+    /**
      *
      * @param args
      */
