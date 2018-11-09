@@ -5,24 +5,24 @@ User Requirements:
 The program should not be demanding to allow a large range of systems to use it
 The program should be fast so that the client(s) will be able to edit photos without having to take breaks waiting for the program to keep up
 Should be written so that the program can be easily mapped to a non-confusing UI
-The program should be reliable and only remove the specified objects
+The program should be reliable
 The program should not be very large
 
   Functional Requirements:.
-The program will take a photo as an input, allow the user to mark objects they want removed from the photo, and then the program will remove them.
+The program will take a photo as an input, allow the user to make designated changes, and then the program will change the photo.
 The program should be small and able to process the changes quickly
 Functions should have an obvious UI counterpart so the client can easily tell what it does
-Each stage of the program, inputting the photograph, marking it, and changing it should be obvious about what stage it is on, and what is needed to be done to move forward
+Each stage of the program, from inputting the photograph, to designating the changes to be made, to the execution, should be obvious about what stage it is on, and what is needed to be done to move forward
 
 System Requirements:  
   Non-Functional Requirements:
 It should be assumed that the program is being run on a low-budget computer
-The removal of an object from the photo shouldn’t take longer than a few seconds
-The program should make it clear what objects are being highlighted
-The program will be consistent with what it removes from the photo. The program should never remove an object that is not designated to be removed
+The changes to the photo shouldn’t take longer than a few seconds
+The program should make it clear what is being changed
+The program will be consistant in the changes. The program should never make non-designated changes
 In order to be run on as many computers as possible, the program should be as small as possible without sacrificing speed
 
   Functional Requirements:
-The program will be able to take in an inputted photo, recognize designated objects, and remove them from the photo. It will do this in three steps. The user will submit a photo. They will then be able to select the objects they want removed. The program will then remove those designated objects
+The program will be able to take in an inputted photo, take inputted changes, and then change them. It will do this in three steps. The user will submit a photo. They will then be able to select what changes they want. The program will then change the photo
 The program needs to have a fast and consistent operation time.
 The UI will be consistent with what functions the program is on
