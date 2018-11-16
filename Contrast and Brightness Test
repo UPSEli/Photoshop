@@ -1,0 +1,32 @@
+import org.opencv.core.Core;
+
+public class Test {
+    // Compulsory
+    static{ System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
+
+    public static void main(String[] args) {
+        System.out.println("What does an empty file return? ");
+        new ContrastandBrightnessRun().run("", 2, 50);
+
+        try {
+            System.out.println("An invalid alpha input returns: ");
+            new ContrastandBrightnessRun().run("pic.png", -1, 50);
+        } catch (IllegalArgumentException e) {
+            System.out.println("That's an invalid input!");
+        }
+
+        try {
+            System.out.println("An invalid beta input returns: ");
+            new ContrastandBrightnessRun().run("pic.png", 1, -50);
+        } catch (IllegalArgumentException e) {
+            System.out.println("That's an invalid input!");
+        }
+
+        try {
+            System.out.println("A valid file and alpha and beta inputs returns: ");
+            new ContrastandBrightnessRun().run("pic.png", 2, 50);
+        } catch (IllegalArgumentException e) {
+            System.out.println("That's an invalid input!");
+        }
+    }
+}
