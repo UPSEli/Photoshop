@@ -10,14 +10,10 @@ import org.opencv.core.Scalar;
 import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
+
 class HistogramRun {
-    public void run(String args) {
-        String filename = args;
-        Mat src = Imgcodecs.imread(filename);
-        if (src.empty()) {
-            System.err.println("Cannot read image: " + filename);
-            System.exit(0);
-        }
+    public Mat run(Mat src) {
+
         List<Mat> bgrPlanes = new ArrayList<>();
         Core.split(src, bgrPlanes);
         int histSize = 256;
@@ -48,16 +44,13 @@ class HistogramRun {
             Imgproc.line(histImage, new Point(binW * (i - 1), histH - Math.round(rHistData[i - 1])),
                     new Point(binW * (i), histH - Math.round(rHistData[i])), new Scalar(0, 0, 255), 2);
         }
-        HighGui.imshow( "Source image", src );
-        HighGui.imshow( "calcHist Demo", histImage );
-        HighGui.waitKey(0);
-        System.exit(0);
+        return histImage;
     }
 }
 public class Histogram {
     public static void main(String[] args) {
         // Load the native OpenCV library
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        new HistogramRun().run("pic.png");
+        //new HistogramRun().run("monkey.jpg");
     }
 }
